@@ -15,8 +15,10 @@ number, are at **[kokab.dev](https://www.kokab.dev)**.
 ## How I build
 
 ```mermaid
-flowchart LR
-    S[Spec] --> T[Failing test] --> G[Generate] --> V{Verify}
+flowchart TD
+    S[Spec] --> T[Failing test]
+    T --> G[Generate]
+    G --> V{Verify}
     V -->|every check green,<br>evidence attached| D[Done]
     V -->|any check red| R[Repair]
     R -->|failure as context| G
