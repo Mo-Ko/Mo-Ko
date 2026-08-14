@@ -14,6 +14,11 @@ number, are at **[kokab.dev](https://www.kokab.dev)**.
 
 ## How I build
 
+The short version: loop engineering inside graph engineering. Each change runs
+this bounded loop, which has to produce evidence to exit, and the loop itself
+is one node in a wider delivery graph that runs from requirements to shipped
+work.
+
 ```mermaid
 flowchart TD
     S[Spec] --> T[Failing test]
