@@ -12,9 +12,23 @@ much as the stack: I work spec-driven, with verification gates that define what
 Full case studies, with the architecture decisions and the evidence behind every
 number, are at **[kokab.dev](https://www.kokab.dev)**.
 
+## How I build
+
+```mermaid
+flowchart LR
+    S[Spec] --> T[Failing test] --> G[Generate] --> V{Verify}
+    V -->|every check green,<br>evidence attached| D[Done]
+    V -->|any check red| R[Repair]
+    R -->|failure as context| G
+    R -->|wrong acceptance<br>condition, not code| S
+```
+
+The interactive version, with what each stage means and the sources behind it,
+is at [kokab.dev/#how-i-build](https://www.kokab.dev/#how-i-build).
+
 ## What I work on
 
-- **Agentic engineering:** spec-driven development, verification gates, loop and graph orchestration, subagent orchestration, TDD as an agent gate ([diagrammed here](https://www.kokab.dev/#how-i-build))
+- **Agentic engineering:** spec-driven development, verification gates, loop and graph orchestration, subagent orchestration, TDD as an agent gate
 - **Backend architecture:** Java, Spring Boot, hexagonal architecture, microservices, PostgreSQL
 - **AI engineering:** Python, FastAPI, LLM orchestration, RAG, agents, LangChain, LangGraph, CrewAI, prompt engineering
 - **Cloud and delivery:** Kubernetes, AWS EKS, Docker, Terraform, Helm, GitLab CI
